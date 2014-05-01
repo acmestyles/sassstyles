@@ -1,0 +1,42 @@
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: sassstyles (app)
+
+ @author: Peter Richmond
+ @www: http://acmestyles.github.io/
+ @github: richmondp
+
+ @twitter: SGoresht
+
+ @copyright: COPYRIGHT 5-1-2014 Company Name
+ =============================================================================
+ Filename: _type.scss
+ =============================================================================
+ This file is responsible for typographic elements on the sassstyles app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+
+@import url($sassstylesFontURL);
+
+/* Type */
+#{headings(all)} {
+	font-weight: $sassstylesHeadingFontWeight;
+}
+
+@for $i from 1 through 6 {
+	h#{$i} {
+		font-size: (($sassstylesEm * $sassstylesMultiplierLarge) - (($i * (($sassstylesEm * $sassstylesMultiplierLarge) / 6 )))) + ($sassstylesEm * $sassstylesMultiplier);
+	}
+}
+
+a {
+	@extend %transition-all;
+	color: $sassstylesInverseTextColour;
+	&:visited {
+		color: darken($sassstylesTextColour, 30);
+	}
+	text-decoration: none;
+}
+
+ul, ol, dl {
+	padding-left: ($sassstylesPaddingLarge * $sassstylesMultiplier);
+	@extend %normal-margin-top-bottom;
+}

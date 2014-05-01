@@ -1,0 +1,30 @@
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: sassstyles (app)
+
+ @author: Peter Richmond
+ @www: http://acmestyles.github.io/
+ @github: richmondp
+
+ @twitter: SGoresht
+
+ @copyright: COPYRIGHT 5-1-2014 Company Name
+ =============================================================================
+ Filename: _mixins.scss
+ =============================================================================
+ This file is responsible for all mixins in the sassstyles app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+
+/* =============================================================================
+Visibility Mixins
+========================================================================== */
+@mixin visuallyhidden { //useful for within a media query
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	left: -500%;
+}

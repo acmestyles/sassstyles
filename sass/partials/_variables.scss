@@ -1,0 +1,123 @@
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: sassstyles (app)
+
+ @author: Peter Richmond
+ @www: http://acmestyles.github.io/
+ @github: richmondp
+
+ @twitter: SGoresht
+
+ @copyright: COPYRIGHT 5-1-2014 Company Name
+ =============================================================================
+ Filename: _variables.scss
+ =============================================================================
+ This file is responsible for all variables in the sassstyles app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+
+@import "compass/css3/pie";
+@import "compass/css3";
+
+/* =============================================================================
+CSS3 PIE
+========================================================================== */
+$pie-enabled: false !default;
+$pie-behavior: url("/css/PIE.htc");
+$pie-base-class: pie-element;
+
+$sassstylesMultiplier: 1.3 !default;
+$sassstylesMultiplierLarge: $sassstylesMultiplier * 2.1 !default;
+$sassstylesMultiplierSmall: $sassstylesMultiplier / $sassstylesMultiplierLarge !default;
+
+$sassstylesMultiplierLargePercentage: $sassstylesMultiplierLarge * 10%;
+
+/* =============================================================================
+Sizes and Spacing
+========================================================================== */
+
+/* Padding */
+$sassstylesPadding: 1em !default;
+$sassstylesPaddingLarge: $sassstylesPadding * $sassstylesMultiplier;
+$sassstylesPaddingSmall: $sassstylesPadding / $sassstylesMultiplier;
+$sassstylesPaddingMini: $sassstylesPadding / $sassstylesMultiplierLarge;
+
+/* Margin */
+$sassstylesMargin: 1em !default;
+$sassstylesMarginSmall: $sassstylesMargin / $sassstylesMultiplier;
+$sassstylesMarginLarge: $sassstylesMargin * $sassstylesMultiplierLarge;
+$sassstylesMarginMini: $sassstylesMarginSmall / $sassstylesMultiplierLarge;
+
+/* =============================================================================
+Grid
+========================================================================== */
+$sassstylesNum-cols: 12 !default;
+$sassstylesRowWidth: 100% !default;
+$sassstylesContainer-lateral-padding: $sassstylesPadding !default;
+$sassstylesCol-margin-right: 3.8% !default;
+$sassstylesCol-unit: (($sassstylesRowWidth + $sassstylesCol-margin-right) / $sassstylesNum-cols) !default;
+
+$sassstylesRowNotation: row !default;
+$sassstylesColumnNotation: col !default;
+
+$sassstylesContainer-width: $sassstylesRowWidth;
+$sassstylesTotal-columns: $sassstylesNum-cols;
+$sassstylesColumn-width: 4% !default;
+$sassstylesGutter-width: 2% !default;
+$sassstylesGrid-padding: 0% !default; //rows should take up the whole screen
+$sassstylesFrom-direction: left;
+
+$sassstylesContainer-style: fluid;
+
+//Turn off media-query fallback output for non-IE stylesheets.
+$sassstylesBreakpoint-ie-output: true;
+/* =============================================================================
+Type
+========================================================================== */
+$sassstylesFontURL: "http://fonts.googleapis.com/css?family=Open+Sans:400,300"; //google font url.  Imported at _type.scss
+$sassstylesEm: 1em !default;
+$sassstylesBaseFontSize: 100% !default;
+$sassstylesBaseFontFamily: "Open Sans", "sans-serif", "arial" !default;
+$sassstylesFontSizeSmall: ($sassstylesBaseFontSize / $sassstylesMultiplierSmall) !default;
+$sassstylesFontSizeMedium: ($sassstylesBaseFontSize * $sassstylesMultiplier) !default;
+$sassstylesFontSizeLarge: ($sassstylesBaseFontSize * $sassstylesMultiplierLarge) !default;
+$sassstylesFontSizeMini: ($sassstylesBaseFontSize / $sassstylesMultiplierLarge) !default;
+$sassstylesLineHeight: 1.4 !default;
+
+$sassstylesHeadingFontWeight: 300 !default;
+$sassstylesBaseFontWeight: 500 !default;
+
+$sassstylesBorderRadius: ($sassstylesMargin / $sassstylesMultiplierLarge) !default;
+$sassstylesBorderRadiusSmall: ($sassstylesBorderRadius / $sassstylesMultiplier) !default;
+$sassstylesBorderRadiusLarge: ($sassstylesBorderRadius * $sassstylesMultiplierLarge) !default;
+
+/* Transitions*/
+$sassstylesTransitionTime: 0.5s !default; //global transition time
+$sassstylesTransitionFunction: ease !default; //transition function for CSS3 transitions
+/* =============================================================================
+Colours
+========================================================================== */
+$sassstylesTextColour: #000 !default;
+$sassstylesInverseTextColour: invert($sassstylesTextColour) !default;
+$sassstylesPrimaryColour: #CCC !default; // colour of text and main colour overall
+$sassstylesSecondaryColour: #0f0f0f !default; // colour of any components, backgrounds, etc.
+$sassstylesTertiaryColour: #7c7c7c !default; //special colour to complement secondary colour
+//background colour.  Should be the opposite of primary colour for good results
+$sassstylesBodyBackground: $sassstylesInverseTextColour !default;
+
+/* Links */
+$sassstylesLinkColour: contrast-color($sassstylesTextColour, lighten($sassstylesTextColour, 30), darken($sassstylesTextColour, 30), 40%);
+
+/* =============================================================================
+Borders
+========================================================================== */
+$sassstylesBorderWidth: 1px !default;
+$sassstylesBorderStyle: solid !default;
+$sassstylesBorderColour: fade-out(lighten($sassstylesTextColour, 80%), 0.5) !default;
+$sassstylesBorder: $sassstylesBorderWidth $sassstylesBorderStyle $sassstylesBorderColour;
+
+/* =============================================================================
+Media query variables
+========================================================================== */
+$sassstylesBreakpointMain: (screen) (max-width 767px);
+$sassstylesQueryIphone3: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio);
+$sassstylesQueryIphone3Portrait: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation portrait);
+$sassstylesQueryIphone3Landscape: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation landscape);
